@@ -132,7 +132,6 @@ def move(speed, direction, turn, radius=0.6):   # 0 < radius <= 1
 
 
 
-
 def destroy():
 	motorStop()
 	GPIO.cleanup()             # Release resource
@@ -140,11 +139,25 @@ def destroy():
 
 if __name__ == '__main__':
 	try:
-		speed_set = 60
+		speed_set_forward = 60
+                speed_set_turn = 80
 		setup()
-		move(speed_set, 'forward', 'no', 0.8)
+
+                time.sleep(20) #Delay time for disconnecting eth cable :c
+		move(speed_set_forward, 'forward', 'no', 0.8)
 		time.sleep(0.5)
 		motorStop()
+
+                time.sleep(1)
+                move(speed_set_turn, 'no', 'right', 0.8)
+                time.sleep(1.2)
+                motorStop()
+
+                time.sleep(1)
+                move(speed_set_turn, 'no', 'left', 0.8)
+                time.sleep(1.2)
+                motorStop()
+
 		destroy()
 	except KeyboardInterrupt:
 		destroy()

@@ -24,9 +24,9 @@ def checkdist():       #Reading distance
         GPIO.output(Tr, GPIO.LOW) 
         time.sleep(0.000002)
         GPIO.output(Tr, GPIO.HIGH) #Send out an initial sound wave
-        time.sleep(0.000015)
-        GPIO.output(Tr, GPIO.LOW)
-
+        time.sleep(0.000015)       #Send a pulse 0.000015sec long
+        GPIO.output(Tr, GPIO.LOW)  #Stop sending sound wave
+        #t1 = time.time()           #Time delay for sound wave to go 2cm = 0.000117sec
         while not GPIO.input(Ec):
             #print("No receiving init. sound wave")
             pass

@@ -8,11 +8,14 @@ import time             # python time library
 Tr = 11 # Trigger pin
 Ec = 8  # Echo pin
 
-def checkdist():            # Define function 
+def checkdist():            # Define function
+    #Setup trigger and Echo
     GPIO.setwarnings(False) # Ignore Raspberry warnings
     GPIO.setmode(GPIO.BCM)  # Setmode broadcom
     GPIO.setup(Tr, GPIO.OUT,initial=GPIO.LOW) # Configure Tr as output
     GPIO.setup(Ec, GPIO.IN) # Configure Ec as input
+
+   #For loop to make 5 measures before give a result
     for i in range(5): # Remove invalid test results
         GPIO.output(Tr, GPIO.LOW) # Tr in low for 2us to stable
         time.sleep(0.000002)
@@ -20,7 +23,7 @@ def checkdist():            # Define function
         time.sleep(0.000015) # Minimum time for trigger to send its 8 pulses
         GPIO.output(Tr, GPIO.LOW) 
         # Program execution is faster than sensor (40kHz vs 15us)
-        while not GPIO.input(Ec): # By this time waves haven't been sent, Ec = LOW
+        while not GPIO.input(Ec): # By this time, waves haven't been sent, Ec = LOW
             pass
         # Once the pulses are sent, Ec = HIGH
         t1 = time.time()

@@ -28,9 +28,11 @@ def checkdist():       #Reading distance
         GPIO.output(Tr, GPIO.LOW)
 
         while not GPIO.input(Ec):
+            #print("No receiving init. sound wave")
             pass
         t1 = time.time()
         while GPIO.input(Ec):
+            #print("Receiving sound wave")
             pass
         t2 = time.time()
         dist = (t2-t1)*340/2

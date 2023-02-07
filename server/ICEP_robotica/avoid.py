@@ -10,10 +10,9 @@ speed_set_turn = 80
 
 "Create function to avoid obstacles"
 def avoid():
-time.sleep(20) # Delay time to disconect eth cable
     while True:
         distance = ultra_ICEP.checkdist()*100 # Measure distance
-        time.sleep(0.4)
+        time.sleep(0.3)
 
         if distance > 0 and distance > 25:   # Move forward as long as distance > 25cm
             move.move(speed_set_forward, 'forward', 'no', 0.8)
@@ -28,4 +27,7 @@ time.sleep(20) # Delay time to disconect eth cable
                 time.sleep(0.3)
 
 if __name__ == '__main__':
-    ul
+    ultra_ICEP.setup()
+    move.setup()
+    time.sleep(20) # Delay time to disconect eth cable
+    avoid()

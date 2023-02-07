@@ -7,14 +7,14 @@ import time             # python time library
 
 Tr = 11 # Trigger pin
 Ec = 8  # Echo pin
-
-def checkdist():            # Define function
+def setup():
     #Setup trigger and Echo
     GPIO.setwarnings(False) # Ignore Raspberry warnings
     GPIO.setmode(GPIO.BCM)  # Setmode broadcom
     GPIO.setup(Tr, GPIO.OUT,initial=GPIO.LOW) # Configure Tr as output
     GPIO.setup(Ec, GPIO.IN) # Configure Ec as input
 
+def checkdist():            # Define function
    #For loop to make 5 measures before give a result
     for i in range(5): # Remove invalid test results
         GPIO.output(Tr, GPIO.LOW) # Tr in low for 2us to stable
@@ -38,6 +38,7 @@ def checkdist():            # Define function
             return (t2-t1)*340/2
 
 if __name__ == '__main__':
+    setup()
     while True:
         distance = checkdist()*100
         print("%.2f cm" %distance)

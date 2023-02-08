@@ -42,7 +42,11 @@ def avoid():
 
 
 if __name__ == '__main__':
-    ultra_ICEP.setup()
-    move.setup()
-    time.sleep(20) # Delay time to disconect eth cable
-    avoid()
+    try:
+        ultra_ICEP.setup()
+        move.setup()
+        time.sleep(20) # Delay time to disconect eth cable
+        avoid()
+
+    except KeyboardInterrupt:
+        move.destroy()

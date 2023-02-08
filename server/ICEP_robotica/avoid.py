@@ -12,7 +12,7 @@ speed_set_turn = 80
 def avoid():
     while True:
         distance = ultra_ICEP.checkdist()*100 # Measure distance
-        time.sleep(0.3)
+        time.sleep(0.1)
 
         if distance > 0 and distance > 25:   # Move forward as long as distance > 25cm
             move.move(speed_set_forward, 'forward', 'no', 0.8)
@@ -24,7 +24,7 @@ def avoid():
                 time.sleep(1)
                 move.motorStop()
                 distance = ultra_ICEP.checkdist()*100 # Measure distance
-                time.sleep(0.3)
+                time.sleep(0.1)
 
 if __name__ == '__main__':
     ultra_ICEP.setup()

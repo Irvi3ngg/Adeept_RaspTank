@@ -20,7 +20,7 @@ def avoid():
             move.motorStop()
             time.sleep(0.3)
             while distance > 0 and distance <= 25:
-                move(speed_set_turn, 'no', 'right', 0.8) # Move robot to the left 90deg
+                move.move(speed_set_turn, 'no', 'right', 0.8) # Move robot to the left 90deg
                 time.sleep(1)
                 move.motorStop()
                 distance = ultra_ICEP.checkdist()*100 # Measure distance

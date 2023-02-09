@@ -38,7 +38,7 @@ def avoid():
                     move.move(speed_set_turn, 'no', 'left', 0.8)
                     time.sleep(1)
                     move.motorStop()
-                    time.sleep(0.2)
+                    time.sleep(0.1)
 
 
 if __name__ == '__main__':

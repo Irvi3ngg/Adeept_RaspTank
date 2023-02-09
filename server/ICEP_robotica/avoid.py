@@ -11,7 +11,7 @@ speed_set_turn = 90
 "Setup function"
 def setuplibs():
     ultra_ICEP.setup()
-    move.move()
+    move.setup()
 
 "Create function to avoid obstacles"
 def avoid():

@@ -8,6 +8,11 @@ import time, ultra_ICEP, move
 speed_set_forward = 60
 speed_set_turn = 90
 
+"Setup function"
+def setuplibs():
+    ultra_ICEP.setup()
+    move.move()
+
 "Create function to avoid obstacles"
 def avoid():
     while True:
@@ -43,8 +48,7 @@ def avoid():
 
 if __name__ == '__main__':
     try:
-        ultra_ICEP.setup()
-        move.setup()
+        setuplibs()
         time.sleep(20) # Delay time to disconect eth cable
         avoid()
 

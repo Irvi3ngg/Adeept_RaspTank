@@ -51,6 +51,6 @@ if __name__ == '__main__':
         setuplibs()
         time.sleep(20) # Delay time to disconect eth cable
         avoid()
-
+        move.destroy()
     except KeyboardInterrupt:
         move.destroy()

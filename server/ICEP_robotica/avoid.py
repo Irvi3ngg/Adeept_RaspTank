@@ -26,7 +26,7 @@ def avoid():
             move.motorStop()
             time.sleep(0.2)
             move.move(speed_set_turn, 'no', 'right', 0.8) # Move robot to the left 90deg
-            time.sleep(1)
+            time.sleep(0.7)
             move.motorStop()
             distance = ultra_ICEP.checkdist()*100 # Measure distance
             time.sleep(0.1)
@@ -34,14 +34,14 @@ def avoid():
             "If distance on the left is < 25cm, check distance on the right side"
             if distance > 0 and distance <= 25:
                 move.move(speed_set_turn, 'no', 'left', 0.8)
-                time.sleep(2) # Rotate 180deg
+                time.sleep(1.4) # Rotate 180deg
                 move.motorStop()
                 distance = ultra_ICEP.checkdist()*100
                 time.sleep(0.1)
                 
                 if distance > 0 and distance <= 25 : # There is a closed area, come back
                     move.move(speed_set_turn, 'no', 'left', 0.8)
-                    time.sleep(1)
+                    time.sleep(0.7)
                     move.motorStop()
                     time.sleep(0.1)
 

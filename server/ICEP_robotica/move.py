@@ -150,12 +150,12 @@ if __name__ == '__main__':
 		
 		time.sleep(1)
 		move(speed_set_turn, 'no', 'right', 0.8)
-		time.sleep(0.7)
+		time.sleep(0.8)
 		motorStop()
 		
 		time.sleep(1)
 		move(speed_set_turn, 'no', 'left', 0.8)
-		time.sleep(0.7)
+		time.sleep(0.8)
 		motorStop()
 
 		destroy()

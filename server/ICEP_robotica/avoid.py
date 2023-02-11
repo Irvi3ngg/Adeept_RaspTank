@@ -6,7 +6,7 @@
 import time, ultra_ICEP, move
 "Set speed"
 speed_set_forward = 60
-speed_set_turn = 80
+speed_set_turn = 90
 
 "Setup function"
 def setuplibs():

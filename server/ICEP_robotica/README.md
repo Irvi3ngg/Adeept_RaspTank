@@ -5,4 +5,5 @@
 - Iveth Quetzal Maldonado Peñaloza  
 - Nora Luz Vargas Lozano  
 - Pedro Aldebaran Sanchez Hernandez  
+- Erick Celestino Rios Chavez
 

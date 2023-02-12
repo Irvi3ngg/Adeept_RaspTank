@@ -3,6 +3,6 @@
 
 - Irving Guillermo Juarez Urtiz  
 - Iveth Quetzal Maldonado Peñaloza  
-- Nora Luz Vargas Lozano
-
+- Nora Luz Vargas Lozano  
+- Pedro Aldebaran Sanchez Hernandez  
 

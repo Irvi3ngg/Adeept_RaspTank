@@ -20,6 +20,11 @@ right      = num_import_int('E_T2:')         #Motor Right
 line_pin_right = 19
 line_pin_middle = 16
 line_pin_left = 20
+
+forward_speed = 40
+right_speed = 40
+left_speed = 40
+back_speed = 40
 '''
 left_R = 15
 left_G = 16
@@ -49,13 +54,13 @@ def run():
     status_left = GPIO.input(line_pin_left)
     #print('R%d   M%d   L%d'%(status_right,status_middle,status_left))
     if status_middle == 1:
-        move.move(60, 'forward', 'no', 1)
+        move.move(forward_speed, 'forward', 'no', 1)
     elif status_left == 1:
-        move.move(70, 'forward', 'right', 0.6)
+        move.move(left_speed, 'forward', 'right', 0.6)
     elif status_right == 1:
-        move.move(70, 'forward', 'left', 0.6)
+        move.move(right_speed, 'forward', 'left', 0.6)
     else:
-        move.move(60, 'backward', 'no', 1)
+        move.move(back_speed, 'backward', 'no', 1)
 
 if __name__ == '__main__':
     try:

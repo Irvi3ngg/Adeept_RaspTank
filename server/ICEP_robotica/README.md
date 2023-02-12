@@ -5,4 +5,6 @@
 - Iveth Quetzal Maldonado Peñaloza  
 - Nora Luz Vargas Lozano  
 - Pedro Aldebaran Sanchez Hernandez  
+- Hector Abelardo Torres Flores  
+
 

@@ -21,10 +21,10 @@ line_pin_right = 20
 line_pin_middle = 16
 line_pin_left = 19
 
-forward_speed = 30
-right_speed = 30
-left_speed = 30
-back_speed = 30
+forward_speed = 80
+right_speed = 80
+left_speed = 80
+back_speed = 80
 '''
 left_R = 15
 left_G = 16
@@ -52,7 +52,7 @@ def run():
     status_right = GPIO.input(line_pin_right)
     status_middle = GPIO.input(line_pin_middle)
     status_left = GPIO.input(line_pin_left)
-    print('R%d   M%d   L%d'%(status_right,status_middle,status_left))
+    #print('R%d   M%d   L%d'%(status_right,status_middle,status_left))
     if status_middle == 1:
         move.move(forward_speed, 'forward', 'no', 1)
     elif status_left == 1:
@@ -64,7 +64,7 @@ def run():
 
 if __name__ == '__main__':
     try:
-        time.sleep(20) # Delay to disconect eth cable
+        time.sleep(10) # Delay to disconect eth cable
         setup()
         move.setup()
         while 1:

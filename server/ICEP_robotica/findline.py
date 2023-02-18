@@ -21,10 +21,10 @@ line_pin_right = 19
 line_pin_middle = 16
 line_pin_left = 20
 
-forward_speed = 40
-right_speed = 40
-left_speed = 40
-back_speed = 40
+forward_speed = 30
+right_speed = 30
+left_speed = 30
+back_speed = 30
 '''
 left_R = 15
 left_G = 16
@@ -52,7 +52,7 @@ def run():
     status_right = GPIO.input(line_pin_right)
     status_middle = GPIO.input(line_pin_middle)
     status_left = GPIO.input(line_pin_left)
-    #print('R%d   M%d   L%d'%(status_right,status_middle,status_left))
+    print('R%d   M%d   L%d'%(status_right,status_middle,status_left))
     if status_middle == 1:
         move.move(forward_speed, 'forward', 'no', 1)
     elif status_left == 1:

@@ -140,22 +140,22 @@ def destroy():
 if __name__ == '__main__':
 	try:
 		speed_set_forward = 60
-		speed_set_turn = 90
+		speed_set_turn = 100
 		setup()
 		
-		time.sleep(10) #Delay time for disconnecting eth cable :c
+		time.sleep(5) #Delay time for disconnecting eth cable :c
 		move(speed_set_forward, 'forward', 'no', 0.8)
 		time.sleep(0.5)
 		motorStop()
 		
 		time.sleep(1)
 		move(speed_set_turn, 'no', 'right', 0.8)
-		time.sleep(0.86)
+		time.sleep(0.83)
 		motorStop()
 		
 		time.sleep(1)
 		move(speed_set_turn, 'no', 'left', 0.8)
-		time.sleep(0.86)
+		time.sleep(0.83)
 		motorStop()
 
 		destroy()

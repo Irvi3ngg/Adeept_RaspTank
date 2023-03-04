@@ -252,24 +252,24 @@ def robotCtrl(command_input, response):
     elif 'handup' == command_input:
         # H1_sc.singleServo(12, 1, 7)
         
-        H2_sc.singleServo(13, -1, 7)
+        H2_sc.singleServo(13, -1, 2)
 
     elif 'handdown' == command_input:
         # H1_sc.singleServo(12, -1, 7)
 
-        H2_sc.singleServo(13, 1, 7)
+        H2_sc.singleServo(13, 1, 2)
 
     elif 'HAstop' in command_input:
         # H1_sc.stopWiggle()
         H2_sc.stopWiggle()
 
     elif 'armup' == command_input:
-        H1_sc.singleServo(12, 1, 7)
+        H1_sc.singleServo(12, 1, 2)
         
         # H2_sc.singleServo(13, 1, 7)
 
     elif 'armdown' == command_input:
-        H1_sc.singleServo(12, -1, 7)
+        H1_sc.singleServo(12, -1, 2)
 
         # H2_sc.singleServo(13, -1, 7)
 

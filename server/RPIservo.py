@@ -32,10 +32,10 @@ init_pwm9 = 300
 init_pwm10 = 300
 init_pwm11 = 300
 
-init_pwm12 = 300
-init_pwm13 = 300
+init_pwm12 = 400
+init_pwm13 = 400
 init_pwm14 = 300
-init_pwm15 = 300
+init_pwm15 = 200
 
 class ServoCtrl(threading.Thread):
 

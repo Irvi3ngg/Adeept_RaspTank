@@ -21,10 +21,10 @@ line_pin_right = 20
 line_pin_middle = 16
 line_pin_left = 19
 
-forward_speed = 45
+forward_speed = 50
 right_speed = 100
 left_speed = 100
-back_speed = 60
+back_speed = 43
 '''
 left_R = 15
 left_G = 16

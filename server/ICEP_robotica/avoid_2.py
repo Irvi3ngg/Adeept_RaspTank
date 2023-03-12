@@ -19,12 +19,12 @@ def setuplibs():
 "Constants"
 right = 1
 left = 0
-turns = {0: 'right', 1: 'right', 2: 'left', 3: 'left'}
-cont = 0
 dist = 20
 
 "Create function to avoid"
 def avoid():
+    turns = {0: 'right', 1: 'right', 2: 'left', 3: 'left'}
+    cont = 0
     while True:
         distance = ultra_ICEP.checkdist()*100
         time.sleep(0.1)
@@ -36,7 +36,7 @@ def avoid():
             move.motorStop()
             direct = turns[cont]
             time.sleep(0.4)
-            while distance <= dist:
+            while distance <= 120:
                 move.move(speed_turn, 'no', direct, 0.8)
                 distance = ultra_ICEP.checkdist()*100
                 time.sleep(0.1)

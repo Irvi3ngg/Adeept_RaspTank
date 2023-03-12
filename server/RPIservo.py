@@ -32,8 +32,8 @@ init_pwm9 = 300
 init_pwm10 = 300
 init_pwm11 = 300
 
-init_pwm12 = 200
-init_pwm13 = 250
+init_pwm12 = 400
+init_pwm13 = 350
 init_pwm14 = 300
 init_pwm15 = 200
 

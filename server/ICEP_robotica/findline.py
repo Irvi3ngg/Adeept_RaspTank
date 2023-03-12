@@ -44,10 +44,10 @@ def run():
         move.move(right_speed, 'forward', 'left', 0.6)
         last_side = 'right'
 
-    elif last_side == 'right':
+    elif last_side == 'right' and status_middle == 0 and status_left == 0 and status_right == 0:
         move.move(back_speed, 'backward', 'right', 0.6)
 
-    elif last_side == 'left':
+    elif last_side == 'left' and status_middle == 0 and status_left == 0 and status_right == 0:
         move.move(back_speed, 'backward', 'left', 0.6)
 
 if __name__ == '__main__':

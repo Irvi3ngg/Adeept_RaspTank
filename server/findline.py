@@ -17,9 +17,9 @@ right_spd  = num_import_int('E_M2:')         #Speed of the car
 left       = num_import_int('E_T1:')         #Motor Left
 right      = num_import_int('E_T2:')         #Motor Right
 '''
-line_pin_right = 19
+line_pin_right = 20
 line_pin_middle = 16
-line_pin_left = 20
+line_pin_left = 19
 '''
 left_R = 15
 left_G = 16
@@ -47,8 +47,9 @@ def run():
     status_right = GPIO.input(line_pin_right)
     status_middle = GPIO.input(line_pin_middle)
     status_left = GPIO.input(line_pin_left)
-    #print('R%d   M%d   L%d'%(status_right,status_middle,status_left))
-    if status_middle == 1:
+    print('L%d   M%d   R%d'%(status_left,status_middle,status_right))
+'''    
+if status_middle == 1:
         move.move(100, 'forward', 'no', 1)
     elif status_left == 1:
         move.move(100, 'forward', 'right', 0.6)
@@ -56,7 +57,7 @@ def run():
         move.move(100, 'forward', 'left', 0.6)
     else:
         move.move(100, 'backward', 'no', 1)
-
+'''
 if __name__ == '__main__':
     try:
         setup()

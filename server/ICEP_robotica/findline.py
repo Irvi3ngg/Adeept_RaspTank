@@ -27,29 +27,30 @@ def setup():
     #motor.setup()
 
 def run():
-    "Read sensors"
-    status_right = GPIO.input(line_pin_right)
-    status_middle = GPIO.input(line_pin_middle)
-    status_left = GPIO.input(line_pin_left)
-    #print('L%d   M%d   R%d'%(status_left,status_middle,status_right))
-    
     last_side = 'no'
+    
+    while True:
+        "Read sensors"
+        status_right = GPIO.input(line_pin_right)
+        status_middle = GPIO.input(line_pin_middle)
+        status_left = GPIO.input(line_pin_left)
+        #print('L%d   M%d   R%d'%(status_left,status_middle,status_right))
+    
+        "Decide direction"
+        if status_middle == 1:
+            move.move(forward_speed, 'forward', 'no', 1)
+            last_side = 'no'
 
-    "Decide direction"
-    if status_middle == 1:
-        move.move(forward_speed, 'forward', 'no', 1)
-        last_side = 'no'
+        elif status_left == 1:
+            move.move(left_speed, 'forward', 'right', 0.6)
+            last_side = 'left'
 
-    elif status_left == 1:
-        move.move(left_speed, 'forward', 'right', 0.6)
-        last_side = 'left'
+        elif status_right == 1:
+            move.move(right_speed, 'forward', 'left', 0.6)
+            last_side = 'right'
 
-    elif status_right == 1:
-        move.move(right_speed, 'forward', 'left', 0.6)
-        last_side = 'right'
-
-    else:
-        move.move(back_speed, 'backward', last_side, 0.6)
+        else:
+            move.move(back_speed, 'backward', last_side, 0.6)
 
     
 if __name__ == '__main__':
@@ -57,8 +58,7 @@ if __name__ == '__main__':
         time.sleep(5) # Delay to disconect eth cable
         setup()
         move.setup()
-        while 1:
-            run()
-        pass
+        run()
+
     except KeyboardInterrupt:
         move.destroy()

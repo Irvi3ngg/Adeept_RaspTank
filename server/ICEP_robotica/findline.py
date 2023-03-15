@@ -13,10 +13,10 @@ line_pin_middle = 16
 line_pin_left = 19
 
 "Speed cts"
-forward_speed = 50
+forward_speed = 70
 right_speed = 100
 left_speed = 100
-back_speed = 90
+back_speed = 100
 
 def setup():
     GPIO.setwarnings(False)

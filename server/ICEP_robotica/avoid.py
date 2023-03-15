@@ -17,6 +17,10 @@ def setuplibs():
 
 "Create function to avoid obstacles"
 def avoid():
+    "Define route"
+    turns = {0: 'right', 1: 'right', 2: 'left', 3: 'left', 4: 'right'}
+    count = 0
+
     while True:
         distance = ultra_ICEP.checkdist()*100 # Measure distance
         time.sleep(0.05)
@@ -27,18 +31,21 @@ def avoid():
         elif distance > 0 and distance <= dist: # Stop when distance <= 25cm
             move.motorStop()
             time.sleep(0.1)
-            move.move(speed_set_turn, 'no', 'right', 0.8) # Move robot to the left 90deg
+            move.move(speed_set_turn, 'no', turns[count], 0.8) # Move robot to the left 90deg
+            count += 1
+            if count > 4:
+                count = 0
             time.sleep(delay)
             move.motorStop()
-            distance = ultra_ICEP.checkdist()*100 # Measure distance
+            distance = ultra_ICEP.checkdist() * 100 # Measure distance
             time.sleep(0.05)
 
             "If distance on the left is < 25cm, check distance on the right side"
             if distance > 0 and distance <= dist:
                 move.move(speed_set_turn, 'no', 'left', 0.8)
-                time.sleep(delay*2) # Rotate 180deg
+                time.sleep(delay * 2) # Rotate 180deg
                 move.motorStop()
-                distance = ultra_ICEP.checkdist()*100
+                distance = ultra_ICEP.checkdist() * 100
                 time.sleep(0.05)
                 
                 if distance > 0 and distance <= dist : # There is a closed area, come back
